@@ -6,11 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.capgemini.employee.model.Employee;
 import com.capgemini.employee.model.Manager;
 
 class ManagerTest {
 
-	private Manager manager;
+	private Employee manager;
 	
 	@BeforeEach
 	public void setUp()
@@ -21,14 +22,14 @@ class ManagerTest {
 	@Test
 	public void testManagerObjectIsCreated()
 	{
-		Manager manager = new Manager();
+		Employee manager = new Manager();
 		assertNotNull(manager);
 	}
 	
 	@Test
 	public void testEmployeeObjectIsCreatedWithParameterizedConstructor()
 	{
-		Manager manager = new Manager(103, "Jane Doe", 15000, 2000);
+		Employee manager = new Manager(103, "Jane Doe", 15000, 2000);
 		assertNotNull(manager);
 		assertEquals(103, manager.getEmployeeId());
 		assertEquals("Jane Doe", manager.getEmployeeName());

@@ -6,11 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.capgemini.employee.model.Employee;
 import com.capgemini.employee.model.MarketingExecutive;
 
 class MarketingExecutiveTest {
 
-private MarketingExecutive marketingExecutive;
+private Employee marketingExecutive;
 	
 	@BeforeEach
 	public void setUp()
@@ -21,20 +22,20 @@ private MarketingExecutive marketingExecutive;
 	@Test
 	public void testMarketingExecutiveObjectIsCreated()
 	{
-		MarketingExecutive marketingExecutive = new MarketingExecutive();
+		Employee marketingExecutive = new MarketingExecutive();
 		assertNotNull(marketingExecutive);
 	}
 	
 	@Test
 	public void testMarketingExecutiveIsCreatedWithParameterizedConstructor()
 	{
-		MarketingExecutive marketingExecutive = new MarketingExecutive(103, "Jane Doe", 15000, 2000, 100);
+		Employee marketingExecutive = new MarketingExecutive(103, "Jane Doe", 15000, 2000, 100);
 		assertNotNull(marketingExecutive);
 		assertEquals(103, marketingExecutive.getEmployeeId());
 		assertEquals("Jane Doe", marketingExecutive.getEmployeeName());
 		assertEquals(15000, marketingExecutive.getBasicSalary());
 		assertEquals(2000, marketingExecutive.getMedical());
-		assertEquals(100, marketingExecutive.getKilometerTravelled());
+		assertEquals(100, ((MarketingExecutive) marketingExecutive).getKilometerTravelled());
 	}
 	
 	@Test
